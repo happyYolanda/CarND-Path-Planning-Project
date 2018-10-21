@@ -8,7 +8,7 @@
 #include "Eigen-3.3/Eigen/Core"
 #include "Eigen-3.3/Eigen/QR"
 #include "json.hpp"
-#include "interp.h"
+#include "spline.h"
 
 using namespace std;
 
@@ -344,7 +344,7 @@ int main() {
               ptsy[i] = shift_x * sin(0 - ref_yaw) + shift_y * cos(0 - ref_yaw);
             }
 
-            tk::interp s;
+            tk::spline s;
             s.set_points(ptsx, ptsy);
 
             vector<double> next_x_vals;
